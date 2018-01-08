@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Band from "./Band";
 
 class Bands extends Component {
   render() {
-    return(
-      <ul>
-        Bands Component
-      </ul>
-    );
+    const bandNames = this.props.store
+      .getState()
+      .bands.map(band => <Band store={this.props.store} band={band} />);
+    return <ul>{bandNames}</ul>;
   }
-};
+}
 
 export default Bands;
