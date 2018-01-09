@@ -6,12 +6,7 @@ class Bands extends Component {
     const bands = this.props.store.getState().bands.map((band, index) => {
       return (
         <li>
-          <Band
-            store={this.props.store}
-            text={band.text}
-            key={index}
-            id={band.id}
-          />
+          <Band store={this.props.store} key={index} band={band} />
         </li>
       );
     });
